@@ -21,7 +21,7 @@ syms t kk
 global N M NM f MM y0 Numexp Totexp
 
 %% C-rate (Put your C-rate)
-Crate          = -1;
+Crate          = 2;
 
 %% Experimental data (Users can input their experimental conditions)
 Numexp         = 63;                                                                      % Number of experimental data
@@ -286,7 +286,7 @@ eq4(1)=0==bc14;                                                                 
 % 'parfor' can be replaced with 'for' if users do not have the parallel computing toolbox 
 parfor i=2:N+1                                                                            % Internal equation
     
-d2udx21         = (1/(h^2))*(u4(i-1) - 2*u4(i) + u4(i+1));
+d2udx24         = (1/(h^2))*(u4(i-1) - 2*u4(i) + u4(i+1));
 
 eq4(i)=0==d2udx24-ap*F*jp(i)/sigmap;
 
